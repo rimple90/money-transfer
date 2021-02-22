@@ -23,7 +23,7 @@
                   <div class="errorMsg" *ngIf="showError">{{ 'i18n.TRANSFER_AmountError' | translate }}</div>
             </div>
       
-            <button mdbBtn *ngIf="!confirmBtn" class="submit-btn btn btn-primary" type="submit" color="deep-orange" (click)="confirmBtn = 'true'" [disabled]="showError || amount == undefined || overDraftError" mdbWavesEffect>{{ 'i18n.TRANSFER_Submit' | translate }}</button>
+            <button mdbBtn *ngIf="!confirmBtn" class="submit-btn btn btn-primary" type="submit" color="deep-orange" (click)="confirmBtn = 'true'" [disabled]="showError || amount == undefined || overDraftError || merchantName.length <= 0" mdbWavesEffect>{{ 'i18n.TRANSFER_Submit' | translate }}</button>
             <div>
             <button *ngIf="confirmBtn" mdbBtn class="cancel-btn btn btn-primary" type="submit" color="deep-orange" (click)="cancel()" mdbWavesEffect>{{ 'i18n.TRANSFER_Cancel' | translate }}</button>
             <button *ngIf="confirmBtn" mdbBtn class="transfer-btn btn btn-primary" type="submit" color="deep-orange" (click)="submit()" mdbWavesEffect>{{ 'i18n.TRANSFER_Transfer' | translate }}</button>
