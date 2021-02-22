@@ -1,0 +1,18 @@
+{
+   "i18n": {
+      "TRANSFER_Title" : "Make a Transfer",
+      "TRANSFER_FromAccount" : "From Account",
+      "TRANSFER_ToAccount" : "To Account",
+      "TRANSFER_Amount" : "Amount",
+      "TRANSFER_Submit" : "Submit",
+      "TRANSFER_Cancel" : "Cancel",
+      "TRANSFER_Transfer" : "Transfer",
+      "TRANSFER_MainError" : "Account Overdraft limit exceeded",
+      "TRANSFER_AmountError" : "Please enter valid amount",
+      "TXN_Title": "Recent Transactions",
+      "TXN_Search" : "Search by typing...",
+      "TXN_SortTitle": "Sort By",
+      "TXN_SortByDate" : "Date",
+      "TXN_SortByBeneficiary": "Beneficiary"
+   }
+}
