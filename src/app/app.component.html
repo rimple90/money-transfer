@@ -1,7 +1,7 @@
 <div>
 <img class="logo-align" src="assets/logo.jpg">
 <div class="lang-dropdown">
-    <select #langSelect (change)='langSelected(langSelect.value)'>
+    <select data-toggle="tooltip" title="{{ 'i18n.TRANSFER_ChangeCountry' | translate }}" #langSelect (change)='langSelected(langSelect.value)'>
         <option value="EN">EN</option>
         <option value="DE">DE</option>
       </select>

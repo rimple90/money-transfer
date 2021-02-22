@@ -11,12 +11,12 @@
             </div>
             <div class="md-form">
                 <label for="toAcc">{{ 'i18n.TRANSFER_ToAccount' | translate | uppercase }}</label>
-                  <input data-mdb-toggle="tooltip" title="Enter From Account" [(ngModel)]="merchantName" type="text" id="toAcc" placeHolder="Please Enter To Account" class="form-control" formControlName="toAcc" aria-labelledby="toAcc" mdbInput>
+                  <input data-mdb-toggle="tooltip" title="{{ 'i18n.TRANSFER_ToAccTip' | translate }}" [(ngModel)]="merchantName" [readonly]="confirmBtn" type="text" id="toAcc" placeHolder="Please Enter To Account" class="form-control" formControlName="toAcc" aria-labelledby="toAcc" mdbInput>
             </div>
             <div class="md-form">
                 <label for="amount">{{ 'i18n.TRANSFER_Amount' | translate | uppercase }}</label>
                   <span class="input-group-addon" id="currency-addon">$</span>
-                  <input data-mdb-toggle="tooltip" title="Enter Amount" [readonly]="confirmBtn" [(ngModel)]="amount" name="amount" type="text" id="amount" class="form-control amount-align" placeHolder="0.00" formControlName="amount" aria-labelledby="amount" (ngModelChange)="checkAmount()" 
+                  <input data-mdb-toggle="tooltip" title="{{ 'i18n.TRANSFER_AmountTip' | translate }}" [readonly]="confirmBtn" [(ngModel)]="amount" name="amount" type="text" id="amount" class="form-control amount-align" placeHolder="0.00" formControlName="amount" aria-labelledby="amount" (ngModelChange)="checkAmount()" 
                   (keypress)="onlyNumber($event)" (keyup)="checkOverDraft()">
                   <div class="errorMsg" *ngIf="showError">{{ 'i18n.TRANSFER_AmountError' | translate }}</div>
             </div>

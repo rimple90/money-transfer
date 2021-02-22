@@ -20,6 +20,9 @@ export class MakeTransferComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private modalService: NgbModal) { }
 
+  /**
+   * on init call
+   */
   ngOnInit() {
     this.transferForm = this.fb.group({
       toAcc: [],
@@ -28,6 +31,9 @@ export class MakeTransferComponent implements OnInit {
    });
   }
 
+  /**
+   * makes money transfer
+   */
   submit() {
     this.initialBalance = this.initialBalance - this.amount;
     const obj = {
@@ -43,10 +49,16 @@ export class MakeTransferComponent implements OnInit {
     this.cancel();
   }
 
+  /**
+   * gets from error
+   */
   get formError() {
     return this.transferForm.controls;
   }
 
+  /**
+   * checks amount validity
+   */
   checkAmount() {
       if (this.amount === '' || this.amount === 0 || this.amount <= 0) {
         this.showError = true;
@@ -55,6 +67,9 @@ export class MakeTransferComponent implements OnInit {
       }
   }
 
+  /**
+   * checks overdraft account error
+   */
   checkOverDraft() {
     if ((this.initialBalance - this.amount) < -500) {
       this.overDraftError = true;
@@ -63,6 +78,9 @@ export class MakeTransferComponent implements OnInit {
     }
   }
 
+  /**
+   * checks amount validity for only number
+   */
   onlyNumber(e: any) {
     let input;
     if (e.metaKey || e.ctrlKey) {
@@ -83,6 +101,10 @@ export class MakeTransferComponent implements OnInit {
     input = String.fromCharCode(e.which);
     return !!/[\d\s]/.test(input);
   }
+
+  /**
+   * cancel the transfer
+   */
   cancel() {
     this.confirmBtn = false;
     this.amount = undefined;

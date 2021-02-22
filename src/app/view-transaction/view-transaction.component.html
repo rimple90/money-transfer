@@ -25,7 +25,7 @@
         <table mdbTable>
             <tbody>
                 <tr mdbTableCol *ngFor="let data of txnData">
-                    <td data-mdb-toggle="tooltip" title="Catergory Code" class="row-align" aria-labelledby="Catergory code" [ngStyle]="{'background-color': data.categoryCode}"></td>
+                    <td data-mdb-toggle="tooltip" title="{{data.type}}" class="row-align" aria-labelledby="Catergory code" [ngStyle]="{'background-color': data.categoryCode}"></td>
                     <td>{{data.date | date}}</td>
                     <td><img class="merchant-icon" *ngIf="!data.newTxn" src="assets/icons/{{data.beneficiary}}.png">
                         <img class="merchant-icon" *ngIf="data.newTxn" src="assets/icons/Backbase.png"></td>

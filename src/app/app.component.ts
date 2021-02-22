@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
   constructor(private httpClient: HttpClient, private translate: TranslateService) {
      translate.setDefaultLang('EN');
   }
+
+  /**
+   * on init call
+   */
   ngOnInit() {
     this.httpClient.get('assets/transactions.json').subscribe((data: any)  => {
       this.txnData = data.data;
@@ -30,6 +34,10 @@ export class AppComponent implements OnInit {
       });
     });
   }
+
+  /**
+   * selects language
+   */
   langSelected(value: string) {
     this.translate.use(value);
 }

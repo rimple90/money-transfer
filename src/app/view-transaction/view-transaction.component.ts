@@ -23,11 +23,17 @@ export class ViewTransactionComponent implements OnInit {
     this.searchItems();
   }
 
+  /**
+   * on init call
+   */
   ngOnInit() {
     this.mdbTable.setDataSource(this.txnData);
     this.previous = this.mdbTable.getDataSource();
   }
 
+  /**
+   * search for data in transaction table
+   */
   searchItems() {
     const prev = this.mdbTable.getDataSource();
     if (!this.searchText || this.searchText === '') {
@@ -40,11 +46,17 @@ export class ViewTransactionComponent implements OnInit {
     }
   }
 
+  /**
+   * clear search text
+   */
   clearSearch() {
     this.searchText = '';
     this.txnData = this.mdbTable.getDataSource();
   }
 
+  /**
+   * sorts by field
+   */
   sortByKey(key: any , sortFlag: boolean) {
     const sort = this.translate.instant(key).toLowerCase();
     this.txnData.sort((a, b) => {
