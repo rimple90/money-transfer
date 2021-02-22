@@ -58,9 +58,8 @@ export class ViewTransactionComponent implements OnInit {
    * sorts by field
    */
   sortByKey(key: any , sortFlag: boolean) {
-    const sort = this.translate.instant(key).toLowerCase();
     this.txnData.sort((a, b) => {
-      if (sort === 'date') {
+      if (key === this.sortParams[0]) {
         this.toggleSort[1] = undefined;
         this.toggleSort[2] = undefined;
         if (sortFlag) {
@@ -75,7 +74,7 @@ export class ViewTransactionComponent implements OnInit {
           return b.date > a.date ? 1 : -1;
         }
       }
-      if (sort === 'beneficiary') {
+      if (key === this.sortParams[1]) {
         this.toggleSort[0] = undefined;
         this.toggleSort[2] = undefined;
         if (sortFlag) {
@@ -90,7 +89,7 @@ export class ViewTransactionComponent implements OnInit {
           return b.beneficiary > a.beneficiary ? 1 : -1;
         }
       }
-      if (sort === 'amount') {
+      if (key === this.sortParams[2]) {
         this.toggleSort[0] = undefined;
         this.toggleSort[1] = undefined;
         if (sortFlag) {
