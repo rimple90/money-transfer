@@ -18,6 +18,8 @@ The app will automatically reload if you change any of the source files.
 
 Application has two components `make-transfer` and `view-transation` and root Component as App Component
 
+Themes folder has been added to include components styling classes
+
 ## Project Assumptions-
 
 To and From Account are disbaled with initial values and cannot be edited
@@ -36,6 +38,8 @@ The Date field in the `Recent Transations` table will display date in MMM dd, yy
 Accesibility tool tip provide on Category Code Field
 
 There is a language switch dropdown created and placed at the top left corner of the application, which will help change the language to showcase i18n feature, the dropdwon has two values EN(English) by default, and DE(German)
+
+Accesibility tool tip provided on the language switch
 
 The application has been made responsive for Iphone x
 
