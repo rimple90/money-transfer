@@ -1,0 +1,42 @@
+<mdb-card>
+        <mdb-card-header class="">
+            <img class="txn-icon" src="assets/icons/briefcase.png"> {{ 'i18n.TXN_Title' | translate }}
+        </mdb-card-header>
+    <mdb-card-body>
+        <div class="container">
+            <div class="row">
+                <div class="md-form col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <input type="text" [(ngModel)]="searchText" id="search" placeholder="{{ 'i18n.TXN_Search' | translate }}" class="form-control" aria-labelledby="Search" mdbInput>
+                    <span><i class="search-icon-close" *ngIf="searchText.length > 0"  (click)="clearSearch();"></i></span>
+                </div>
+                <div class="sort-header col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <span class="sort-title bold-txt">{{ 'i18n.TXN_SortTitle' | translate }}</span>
+                    <span *ngFor="let param of sortParams; let i=index" class="sort-params" (click)="toggleSort[i]=!toggleSort[i]; sortByKey(param, toggleSort[i]);">
+                        {{ param  | translate | uppercase }}
+                        <img *ngIf="toggleSort[i]!==undefined && toggleSort[i]" class="sort-icon" src="assets/icons/caret-up.png">
+                        <img *ngIf="toggleSort[i]!== undefined && !toggleSort[i]" class="sort-icon" src="assets/icons/caret-down.png">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </mdb-card-body>   
+    <!--Card content-->
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table mdbTable>
+            <tbody>
+                <tr mdbTableCol *ngFor="let data of txnData">
+                    <td data-mdb-toggle="tooltip" title="Catergory Code" class="row-align" aria-labelledby="Catergory code" [ngStyle]="{'background-color': data.categoryCode}"></td>
+                    <td>{{data.date | date}}</td>
+                    <td><img class="merchant-icon" *ngIf="!data.newTxn" src="assets/icons/{{data.beneficiary}}.png">
+                        <img class="merchant-icon" *ngIf="data.newTxn" src="assets/icons/Backbase.png"></td>
+                    <td aria-labelledby="beneficiary">
+                        <div class="bold-txt">{{data.beneficiary}}</div>
+                        <div>{{data.type}}</div>
+                    </td>
+                    <td aria-labelledby="amount" class="bold-txt"><span *ngIf="data.creditDebitIndicator=='DBIT'">-</span>${{data.amount | number : '1.2-2'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</mdb-card>
+    

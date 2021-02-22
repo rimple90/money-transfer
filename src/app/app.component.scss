@@ -1,0 +1,29 @@
+.container {  
+    height: 650px;  
+    color: #fff;
+    background-image: url("/assets/background.jpg");  
+    background-size: 100% ;  
+    background-size: cover;  
+    border-top: 2px solid #ff7043;
+    display: table;
+}
+.transfer-container {
+    padding: 50px 0px 0px 100px;
+}
+.txn-container {
+    padding: 50px 0px 0px 10px;
+}
+.logo-align {
+    padding: 10px 0px 10px 209px;
+    width: 40%;
+}
+.lang-dropdown {
+    float: right;
+    float: right;
+    margin-right: 100px;
+    padding: 10px;
+}
+/* For mobile phones: */
+[class*='col-'] {
+    width: 100%;
+}

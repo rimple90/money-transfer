@@ -1,0 +1,20 @@
+<div>
+<img class="logo-align" src="assets/logo.jpg">
+<div class="lang-dropdown">
+    <select #langSelect (change)='langSelected(langSelect.value)'>
+        <option value="EN">EN</option>
+        <option value="DE">DE</option>
+      </select>
+  </div>
+<div class="container">
+  <div class="row">
+      <div class="transfer-container col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <app-make-transfer [txnData]="formattedTxnData"></app-make-transfer>
+      </div>
+      <div class="txn-container col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <app-view-transaction [txnData]="formattedTxnData"></app-view-transaction>
+      </div>
+  </div>
+</div>
+</div>
+<!-- <router-outlet></router-outlet> -->
