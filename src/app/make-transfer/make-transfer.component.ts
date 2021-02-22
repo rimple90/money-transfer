@@ -13,7 +13,7 @@ export class MakeTransferComponent implements OnInit {
   @Input() txnData: any;
   initialBalance: any = 5824.76;
   amount: any = undefined;
-  merchantName = '';
+  merchantName = 'Georgia Power Electric Company';
   confirmBtn = false;
   showError = false;
   overDraftError = false;
