@@ -1,0 +1,18 @@
+{
+   "i18n": {
+      "TRANSFER_Title" : "Machen einen Transfer",
+      "TRANSFER_FromAccount" : "Vom Konto",
+      "TRANSFER_ToAccount" : "Zu Konto",
+      "TRANSFER_Amount" : "Menge",
+      "TRANSFER_Submit" : "einreichen",
+      "TRANSFER_Cancel" : "Stornieren",
+      "TRANSFER_Transfer" : "Transferel",
+      "TRANSFER_MainError" : "Kontokorrentkreditlimit überschritten",
+      "TRANSFER_AmountError" : "Bitte geben Sie einen gültigen Betrag ein",
+      "TXN_Title": "kürzliche Transaktionen",
+      "TXN_Search" : "Suche durch Eingabe von ...",
+      "TXN_SortTitle": "Sortieren nach",
+      "TXN_SortByDate" : "Datum",
+      "TXN_SortByBeneficiary": "Nutznießer"
+   }
+}
