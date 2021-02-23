@@ -41,7 +41,7 @@ module.exports = "<div>\n<nav class=\"navbar\">\n<div class=\"container-fluid\">
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"transfer\">\n<mdb-card>\n    <mdb-card-header>\n            <img class=\"tranfer-icon\" src=\"assets/icons/arrows.png\"> {{ 'i18n.TRANSFER_Title' | translate }}\n    </mdb-card-header>\n    <div class=\"errorMsg main-error\" *ngIf=\"overDraftError\">{{ 'i18n.TRANSFER_MainError' | translate }}</div>\n    <mdb-card-body>\n          <form [formGroup]=\"transferForm\" class=\"text-center needs-validation\" novalidate>\n            <div class=\"md-form\">\n            <label for=\"fromAcc\">{{ 'i18n.TRANSFER_FromAccount' | translate | uppercase }}</label>\n              <input [readonly]=\"true\" type=\"text\" id=\"fromAcc\" value=\"Free Checking(4692) - ${{initialBalance | number : '1.2-2'}}\" class=\"form-control\" formControlName=\"fromAcc\" aria-labelledby=\"fromAcc\" mdbInput>\n            </div>\n            <div class=\"md-form\">\n                <label for=\"toAcc\">{{ 'i18n.TRANSFER_ToAccount' | translate | uppercase }}</label>\n                  <input data-mdb-toggle=\"tooltip\" title=\"{{ 'i18n.TRANSFER_ToAccTip' | translate }}\" [(ngModel)]=\"merchantName\" [readonly]=\"confirmBtn\" type=\"text\" id=\"toAcc\" placeHolder=\"Please Enter To Account\" class=\"form-control\" formControlName=\"toAcc\" aria-labelledby=\"toAcc\" mdbInput>\n                  <div class=\"errorMsg\" *ngIf=\"merchantName.length <= 0\">{{ 'i18n.TRANSFER_ToAccError' | translate }}</div>\n            </div>\n            <div class=\"md-form\">\n                <label for=\"amount\">{{ 'i18n.TRANSFER_Amount' | translate | uppercase }}</label>\n                  <span class=\"input-group-addon\" id=\"currency-addon\">$</span>\n                  <input data-mdb-toggle=\"tooltip\" title=\"{{ 'i18n.TRANSFER_AmountTip' | translate }}\" [readonly]=\"confirmBtn\" [(ngModel)]=\"amount\" name=\"amount\" type=\"text\" id=\"amount\" class=\"form-control amount-align\" placeHolder=\"0.00\" formControlName=\"amount\" aria-labelledby=\"amount\" (ngModelChange)=\"checkAmount()\" \n                  (keypress)=\"onlyNumber($event)\" (keyup)=\"checkOverDraft()\">\n                  <div class=\"errorMsg\" *ngIf=\"showError\">{{ 'i18n.TRANSFER_AmountError' | translate }}</div>\n            </div>\n      \n            <button mdbBtn *ngIf=\"!confirmBtn\" class=\"submit-btn btn btn-primary\" type=\"submit\" color=\"deep-orange\" (click)=\"confirmBtn = 'true'\" [disabled]=\"showError || amount == undefined || overDraftError || merchantName.length <= 0\" mdbWavesEffect>{{ 'i18n.TRANSFER_Submit' | translate }}</button>\n            <div>\n            <button *ngIf=\"confirmBtn\" mdbBtn class=\"cancel-btn btn btn-primary\" type=\"submit\" color=\"deep-orange\" (click)=\"cancel()\" mdbWavesEffect>{{ 'i18n.TRANSFER_Cancel' | translate }}</button>\n            <button *ngIf=\"confirmBtn\" mdbBtn class=\"transfer-btn btn btn-primary\" type=\"submit\" color=\"deep-orange\" (click)=\"submit()\" mdbWavesEffect>{{ 'i18n.TRANSFER_Transfer' | translate }}</button>\n            </div>\n          </form>\n        </mdb-card-body>\n    </mdb-card>\n</div>\n"
+module.exports = "<div class=\"transfer\">\n<mdb-card>\n    <mdb-card-header>\n            <img class=\"tranfer-icon\" src=\"assets/icons/arrows.png\"> {{ 'i18n.TRANSFER_Title' | translate }}\n    </mdb-card-header>\n    <div class=\"errorMsg main-error\" *ngIf=\"overDraftError\">{{ 'i18n.TRANSFER_MainError' | translate }}</div>\n    <mdb-card-body>\n          <form [formGroup]=\"transferForm\" class=\"text-center needs-validation\" novalidate>\n            <div class=\"md-form\">\n            <label for=\"fromAcc\">{{ 'i18n.TRANSFER_FromAccount' | translate | uppercase }}</label>\n              <input [readonly]=\"true\" type=\"text\" id=\"fromAcc\" value=\"Free Checking(4692) - ${{initialBalance | number : '1.2-2'}}\" class=\"form-control\" formControlName=\"fromAcc\" aria-labelledby=\"fromAcc\" mdbInput>\n            </div>\n            <div class=\"md-form\">\n                <label for=\"toAcc\">{{ 'i18n.TRANSFER_ToAccount' | translate | uppercase }}</label>\n                  <input data-mdb-toggle=\"tooltip\" title=\"{{ 'i18n.TRANSFER_ToAccTip' | translate }}\" [(ngModel)]=\"merchantName\" [readonly]=\"confirmBtn\" type=\"text\" id=\"toAcc\" placeHolder=\"Please Enter To Account\" class=\"form-control\" formControlName=\"toAcc\" aria-labelledby=\"toAcc\" mdbInput>\n                  <div class=\"errorMsg\" *ngIf=\"merchantName.length <= 0\">{{ 'i18n.TRANSFER_ToAccError' | translate }}</div>\n            </div>\n            <div class=\"md-form\">\n                <label for=\"amount\">{{ 'i18n.TRANSFER_Amount' | translate | uppercase }}</label>\n                  <span class=\"input-group-addon\" id=\"currency-addon\">$</span>\n                  <input data-mdb-toggle=\"tooltip\" title=\"{{ 'i18n.TRANSFER_AmountTip' | translate }}\" [readonly]=\"confirmBtn\" [(ngModel)]=\"amount\" name=\"amount\" type=\"text\" id=\"amount\" class=\"form-control amount-align\" placeHolder=\"0.00\" formControlName=\"amount\" aria-labelledby=\"amount\" (ngModelChange)=\"checkAmount()\" \n                  appOnlyNumber (keyup)=\"checkOverDraft()\">\n                  <div class=\"errorMsg\" *ngIf=\"showError\">{{ 'i18n.TRANSFER_AmountError' | translate }}</div>\n            </div>\n      \n            <button mdbBtn *ngIf=\"!confirmBtn\" class=\"submit-btn btn btn-primary\" type=\"submit\" color=\"deep-orange\" (click)=\"confirmBtn = 'true'\" [disabled]=\"showError || amount == undefined || overDraftError || merchantName.length <= 0\" mdbWavesEffect>{{ 'i18n.TRANSFER_Submit' | translate }}</button>\n            <div>\n            <button *ngIf=\"confirmBtn\" mdbBtn class=\"cancel-btn btn btn-primary\" type=\"submit\" color=\"deep-orange\" (click)=\"cancel()\" mdbWavesEffect>{{ 'i18n.TRANSFER_Cancel' | translate }}</button>\n            <button *ngIf=\"confirmBtn\" mdbBtn class=\"transfer-btn btn btn-primary\" type=\"submit\" color=\"deep-orange\" (click)=\"submit()\" mdbWavesEffect>{{ 'i18n.TRANSFER_Transfer' | translate }}</button>\n            </div>\n          </form>\n        </mdb-card-body>\n    </mdb-card>\n</div>\n"
 
 /***/ }),
 
@@ -190,6 +190,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/esm2015/ngx-translate-core.js");
 /* harmony import */ var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ngx-translate/http-loader */ "./node_modules/@ngx-translate/http-loader/esm2015/ngx-translate-http-loader.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
+/* harmony import */ var _transfers_common_directives_only_number_directive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./transfers-common/directives/only-number.directive */ "./src/app/transfers-common/directives/only-number.directive.ts");
+
 
 
 
@@ -210,7 +212,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
             _make_transfer_make_transfer_component__WEBPACK_IMPORTED_MODULE_5__["MakeTransferComponent"],
-            _view_transaction_view_transaction_component__WEBPACK_IMPORTED_MODULE_6__["ViewTransactionComponent"]
+            _view_transaction_view_transaction_component__WEBPACK_IMPORTED_MODULE_6__["ViewTransactionComponent"],
+            _transfers_common_directives_only_number_directive__WEBPACK_IMPORTED_MODULE_13__["OnlyNumberDirective"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -317,7 +320,7 @@ let MakeTransferComponent = class MakeTransferComponent {
      * checks amount validity
      */
     checkAmount() {
-        if (this.amount === '' || this.amount === 0 || this.amount <= 0) {
+        if (this.amount === '' || this.amount === 0 || this.amount <= 0 || this.amount === '.') {
             this.showError = true;
         }
         else {
@@ -334,29 +337,6 @@ let MakeTransferComponent = class MakeTransferComponent {
         else {
             this.overDraftError = false;
         }
-    }
-    /**
-     * checks amount validity for only number
-     */
-    onlyNumber(e) {
-        let input;
-        if (e.metaKey || e.ctrlKey) {
-            return true;
-        }
-        if (e.which === 32) {
-            return false;
-        }
-        if (e.which === 0) {
-            return true;
-        }
-        if (e.which < 33) {
-            return true;
-        }
-        if (e.which === 46) {
-            return true;
-        }
-        input = String.fromCharCode(e.which);
-        return !!/[\d\s]/.test(input);
     }
     /**
      * cancel the transfer
@@ -382,6 +362,63 @@ MakeTransferComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbModal"]])
 ], MakeTransferComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/transfers-common/directives/only-number.directive.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/transfers-common/directives/only-number.directive.ts ***!
+  \**********************************************************************/
+/*! exports provided: OnlyNumberDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnlyNumberDirective", function() { return OnlyNumberDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let OnlyNumberDirective = class OnlyNumberDirective {
+    constructor(el) {
+        this.el = el;
+        // Allow decimal numbers and negative values
+        this.regex = new RegExp(/^\d*\.?\d{0,2}$/g);
+        // Allow key codes for special events. Reflect :
+        // Backspace, tab, end, home
+        this.specialKeys = ['Backspace', 'Tab', 'End', 'Home', '-', 'ArrowLeft', 'ArrowRight', 'Del', 'Delete'];
+    }
+    onKeyDown(event) {
+        console.log(this.el.nativeElement.value);
+        // Allow Backspace, tab, end, and home keys
+        if (this.specialKeys.indexOf(event.key) !== -1) {
+            return;
+        }
+        const current = this.el.nativeElement.value;
+        const position = this.el.nativeElement.selectionStart;
+        const next = [current.slice(0, position), event.key === 'Decimal' ? '.' : event.key, current.slice(position)].join('');
+        if (next && !String(next).match(this.regex)) {
+            event.preventDefault();
+        }
+    }
+};
+OnlyNumberDirective.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"] }
+];
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('keydown', ['$event']),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Function),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [KeyboardEvent]),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:returntype", void 0)
+], OnlyNumberDirective.prototype, "onKeyDown", null);
+OnlyNumberDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+        selector: '[appOnlyNumber]'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
+], OnlyNumberDirective);
 
 
 
