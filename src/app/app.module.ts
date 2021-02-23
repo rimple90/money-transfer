@@ -11,12 +11,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { OnlyNumberDirective } from './transfers-common/directives/only-number.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     MakeTransferComponent,
-    ViewTransactionComponent
+    ViewTransactionComponent,
+    OnlyNumberDirective
   ],
   imports: [
     BrowserModule,

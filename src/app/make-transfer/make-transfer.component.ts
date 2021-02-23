@@ -60,7 +60,7 @@ export class MakeTransferComponent implements OnInit {
    * checks amount validity
    */
   checkAmount() {
-      if (this.amount === '' || this.amount === 0 || this.amount <= 0) {
+      if (this.amount === '' || this.amount === 0 || this.amount <= 0 || this.amount === '.') {
         this.showError = true;
       } else {
         this.showError = false;
@@ -77,31 +77,6 @@ export class MakeTransferComponent implements OnInit {
       this.overDraftError = false;
     }
   }
-
-  /**
-   * checks amount validity for only number
-   */
-  onlyNumber(e: any) {
-    let input;
-    if (e.metaKey || e.ctrlKey) {
-       return true;
-    }
-    if (e.which === 32) {
-       return false;
-    }
-    if (e.which === 0) {
-       return true;
-    }
-    if (e.which < 33) {
-       return true;
-    }
-    if (e.which === 46) {
-      return true;
-   }
-    input = String.fromCharCode(e.which);
-    return !!/[\d\s]/.test(input);
-  }
-
   /**
    * cancel the transfer
    */

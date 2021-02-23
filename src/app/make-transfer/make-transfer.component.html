@@ -19,7 +19,7 @@
                 <label for="amount">{{ 'i18n.TRANSFER_Amount' | translate | uppercase }}</label>
                   <span class="input-group-addon" id="currency-addon">$</span>
                   <input data-mdb-toggle="tooltip" title="{{ 'i18n.TRANSFER_AmountTip' | translate }}" [readonly]="confirmBtn" [(ngModel)]="amount" name="amount" type="text" id="amount" class="form-control amount-align" placeHolder="0.00" formControlName="amount" aria-labelledby="amount" (ngModelChange)="checkAmount()" 
-                  (keypress)="onlyNumber($event)" (keyup)="checkOverDraft()">
+                  appOnlyNumber (keyup)="checkOverDraft()">
                   <div class="errorMsg" *ngIf="showError">{{ 'i18n.TRANSFER_AmountError' | translate }}</div>
             </div>
       
