@@ -41,7 +41,7 @@ There is a language switch dropdown created and placed at the top left corner of
 
 Accesibility tool tip provided on the language switch
 
-The application has been made responsive for Iphone x
+The application has been made responsive for all devices.
 
 
 ## Running unit tests
