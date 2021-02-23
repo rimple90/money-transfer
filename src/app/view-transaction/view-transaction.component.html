@@ -6,11 +6,11 @@
     <mdb-card-body>
         <div class="container">
             <div class="row">
-                <div class="md-form col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="md-form col-xs-7 col-sm-7 col-md-7 col-lg-7">
                     <input type="text" [(ngModel)]="searchText" id="search" placeholder="{{ 'i18n.TXN_Search' | translate }}" class="form-control" aria-labelledby="Search" mdbInput>
                     <span><i class="search-icon-close" *ngIf="searchText.length > 0"  (click)="clearSearch();"></i></span>
                 </div>
-                <div class="sort-header col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="sort-header col-xs-5 col-sm-5 col-md-5 col-lg-5">
                     <span class="sort-title bold-txt">{{ 'i18n.TXN_SortTitle' | translate }}</span>
                     <span *ngFor="let param of sortParams; let i=index" class="sort-params" (click)="toggleSort[i]=!toggleSort[i]; sortByKey(param, toggleSort[i]);">
                         {{ param  | translate | uppercase }}
@@ -27,14 +27,14 @@
             <tbody>
                 <tr mdbTableCol *ngFor="let data of txnData">
                     <td data-mdb-toggle="tooltip" title="{{data.type}}" class="row-align" aria-labelledby="Catergory code" [ngStyle]="{'background-color': data.categoryCode}"></td>
-                    <td>{{data.date | date}}</td>
+                    <td class="date-align">{{data.date | date}}</td>
                     <td><img class="merchant-icon" *ngIf="!data.newTxn" src="assets/icons/{{data.beneficiary}}.png">
                         <img class="merchant-icon" *ngIf="data.newTxn" src="assets/icons/Backbase.png"></td>
                     <td aria-labelledby="beneficiary">
                         <div class="bold-txt">{{data.beneficiary}}</div>
                         <div>{{data.type}}</div>
                     </td>
-                    <td aria-labelledby="amount" class="bold-txt"><span *ngIf="data.creditDebitIndicator=='DBIT'">-</span>${{data.amount | number : '1.2-2'}}</td>
+                    <td aria-labelledby="amount" class="bold-txt amount-align"><span *ngIf="data.creditDebitIndicator=='DBIT'">-</span>${{data.amount | number : '1.2-2'}}</td>
                 </tr>
             </tbody>
         </table>

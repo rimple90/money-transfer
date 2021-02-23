@@ -10,7 +10,7 @@
         border-radius: 0px;
     }
     .card {
-        width: 650px;
+        width: 100%;
         border-radius: 0px;
     }
     .card-body {
@@ -69,6 +69,7 @@
     }
     .sort-title {
         padding-right: 10px;
+        padding-left: 15px;
     }
     .sort-icon {
         width: 15px;
@@ -95,5 +96,11 @@
         margin-top: -20px;
         font-weight: bold;
         font-style: normal;
+    }
+    .date-align {
+        width: 15%;
+    }
+    .amount-align {
+        text-align: right;
     }
 }
